@@ -8,6 +8,12 @@ from typing import List
 
 class CustomerRecordDeserializer(BaseDeserializer):
     def deserialize(self, raw_data):
+        """
+        Deserializer method for Customer Records.This method deserializes json strings of customer records
+        into objects of Customer Records.
+        :param raw_data: List of json strings of customer records
+        :return: List of Customer record objects
+        """
         if not isinstance(raw_data, List):
             raise BaseDeserializerError("Customer Record Deserializer expects raw input to be a list")
         deserialized_data = []

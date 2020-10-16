@@ -2,12 +2,18 @@ from typing import List
 
 from src.lib.filters.base_filter import BaseFilter, BaseFilterError
 from src.lib.utils.computation import Computation
-from src.models.customer_record import CustomerRecord
-from src.models.location import Location
 
 
 class FilterByDistance(BaseFilter):
     def filter(self, customer_records, source, threshold: float):
+        """
+        This method filters all locations which are within X kilometer away from the source location.Where X is defined
+        as threshold.
+        :param customer_records: List of Customer Record objects
+        :param source: Source Location
+        :param threshold: Threshold in kilometers for the filter
+        :return: Filtered list of Customer Record objects
+        """
         filtered_data = []
         if not isinstance(customer_records, List):
             raise BaseFilterError("Filter expects customer records in for of an array")

@@ -8,6 +8,9 @@ class BaseFilterError(Exception):
 
 
 class BaseFilter(ABC):
+    """
+    Base filter class for all filter implementations.
+    """
     @abstractmethod
     def filter(self, customer_records: CustomerRecord, source, threshold):
         pass

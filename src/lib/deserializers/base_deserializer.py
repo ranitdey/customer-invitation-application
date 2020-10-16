@@ -1,5 +1,4 @@
 from abc import ABC, abstractmethod
-from typing import List
 
 
 class BaseDeserializerError(Exception):
@@ -8,6 +7,9 @@ class BaseDeserializerError(Exception):
 
 
 class BaseDeserializer(ABC):
+    """
+    Base deserializer class for all deserializer implementations.
+    """
     @abstractmethod
     def deserialize(self, raw_data):
         pass

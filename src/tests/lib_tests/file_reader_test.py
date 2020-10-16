@@ -1,6 +1,6 @@
 import pytest
 
-from src.config import CUSTOMER_RECORDS_FILE_PATH, ROOT_DIR
+from src.config import ROOT_DIR
 from src.lib.io.file_reader import FileReader
 
 

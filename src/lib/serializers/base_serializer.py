@@ -8,6 +8,9 @@ class BaseSerializerError(Exception):
 
 
 class BaseSerializer(ABC):
+    """
+        Base serializer class for all serializer implementations.
+    """
     @abstractmethod
     def serialize(self, objects: List):
         pass

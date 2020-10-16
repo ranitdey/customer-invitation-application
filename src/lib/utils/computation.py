@@ -11,6 +11,12 @@ class ComputationError(Exception):
 class Computation:
     @staticmethod
     def compute_distance(location_one: Location, location_two: Location):
+        """
+        Computes shortest distance between two points on a sphere.
+        :param location_one: Location of the first point.
+        :param location_two: Location of the second point.
+        :return: Shortest distance between two points on a sphere
+        """
         if not location_one or not location_two:
             raise ComputationError("Two locations are needed to calculate the distance")
         latitude_one = radians(location_one.latitude)
