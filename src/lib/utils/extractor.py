@@ -1,4 +1,5 @@
 from typing import List
+import logging
 
 
 class ExtractorError(Exception):
@@ -16,7 +17,9 @@ class Extractor:
         """
         if not isinstance(customer_records, List):
             raise ExtractorError("Customer extractor expects input to be a list")
+        logging.info("Extracting Customer objects from Customer Records")
         extracted_users = []
         for record in customer_records:
             extracted_users.append(record.customer)
+        logging.info("Extraction process completed")
         return extracted_users

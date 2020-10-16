@@ -1,3 +1,6 @@
+import logging
+
+
 class FileReader:
     @staticmethod
     def read_file(path: str):
@@ -7,6 +10,7 @@ class FileReader:
         :return: List of line separated content of the file
         """
         raw_data = []
+        logging.info("Reading file: {}".format(path))
         with open(path, encoding='utf-8') as file:
             for line in file:
                 raw_data.append(line)

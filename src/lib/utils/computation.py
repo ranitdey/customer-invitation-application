@@ -1,6 +1,7 @@
 from math import acos, cos, sin, radians
 from src.config import EARTH_RADIUS_IN_KILOMETERS
 from src.models.location import Location
+import logging
 
 
 class ComputationError(Exception):
@@ -19,6 +20,8 @@ class Computation:
         """
         if not location_one or not location_two:
             raise ComputationError("Two locations are needed to calculate the distance")
+        logging.info("Computing distance of point one (lat: {}, long: {}) and point two (lat: {}, long: {})".format(
+            location_one.latitude, location_one.longitude, location_two.latitude, location_two.longitude))
         latitude_one = radians(location_one.latitude)
         longitude_one = radians(location_one.longitude)
         latitude_two = radians(location_two.latitude)
@@ -26,5 +29,5 @@ class Computation:
 
         delta = abs(longitude_one - longitude_two)
         angle = acos((sin(latitude_one) * sin(latitude_two)) + (cos(latitude_one) * cos(latitude_two) * cos(delta)))
-
+        logging.info("Distance computation completed")
         return angle * EARTH_RADIUS_IN_KILOMETERS

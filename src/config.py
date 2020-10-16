@@ -1,5 +1,9 @@
 import os
 from src.models.location import Location
+import logging
+
+logging.getLogger().setLevel(logging.INFO)
+logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EARTH_RADIUS_IN_KILOMETERS = 6371

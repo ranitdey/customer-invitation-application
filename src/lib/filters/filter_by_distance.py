@@ -2,6 +2,7 @@ from typing import List
 
 from src.lib.filters.base_filter import BaseFilter, BaseFilterError
 from src.lib.utils.computation import Computation
+import logging
 
 
 class FilterByDistance(BaseFilter):
@@ -21,8 +22,10 @@ class FilterByDistance(BaseFilter):
             raise BaseFilterError("Source location is not valid")
         if not threshold:
             raise BaseFilterError("Threshold is not valid")
+        logging.info("Filtering Customer Records started")
         for record in customer_records:
             distance = Computation.compute_distance(source, record.location)
             if distance <= threshold:
                 filtered_data.append(record)
+        logging.info("Filtering Customer Records completed")
         return filtered_data

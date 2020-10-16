@@ -1,3 +1,6 @@
+import logging
+
+
 class Sorting:
     @staticmethod
     def sort_customers(records, ascending: bool):
@@ -7,6 +10,7 @@ class Sorting:
         :param ascending: Will the sorting happen on ascending order or descending order
         :return:
         """
+        logging.warning("Sorting Customer objets")
         records.sort(key=lambda x: x.user_id, reverse=not ascending)
 
 
