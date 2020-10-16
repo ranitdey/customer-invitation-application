@@ -4,6 +4,6 @@ from src.models.customer_record import CustomerRecord
 
 class BaseFilter(ABC):
     @abstractmethod
-    def filter(self, customer_records: CustomerRecord, criteria: dict):
+    def filter(self, customer_records: CustomerRecord, source, threshold):
         pass
 
