@@ -10,7 +10,7 @@ class CustomerRecordDeserializer(BaseDeserializer):
         deserialized_data = []
         for line in raw_data:
             data = json.loads(line)
-            location = Location(data[LocationFields.latitude.name], data[LocationFields.longitude.name])
+            location = Location(float(data[LocationFields.latitude.name]), float(data[LocationFields.longitude.name]))
             customer = Customer(data[CustomerFields.user_id.name], data[CustomerFields.name.name])
             customer_record = CustomerRecord(customer, location)
             deserialized_data.append(customer_record)
