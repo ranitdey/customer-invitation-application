@@ -38,5 +38,18 @@ steps :-
     pip install -r requirements.txt
 ```
 
+* Run the application from project root folder. This will read the customer.txt file from /resource
+ folder and generate the output in /output folder.In the output file it also attaches the 
+ timestamp in the filename. 
 
+```bash
+    python src/app.py 
+```
 
+## How to test
+
+* To run the unit test cases navigate to the project root folder and execute the following command: 
+
+```bash
+    pytest src/tests
+```
