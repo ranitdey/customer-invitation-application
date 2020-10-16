@@ -3,7 +3,8 @@
 ## About
 
 This application reads user data from a text file and filters users based on comparing
-their location and specific location constrains.It also outputs the result in a text file.
+their location and specific location constrains.It also outputs the result in a text file where the data is sorted by 
+user_id in ascending order.
 
 ## Requires
 * Python (version > 3)
@@ -28,6 +29,13 @@ steps :-
 
 ```bash
     git clone https://github.com/ranitdey/customer-invitation-application.git
+    cd customer-invitation-application/
+    
+```
+
+* Set project root directory as PYTHONPATH:
+```bash
+    export PYTHONPATH = <your system local path until the project root> /customer-invitation-application
     
 ```
 
