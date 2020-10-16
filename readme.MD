@@ -9,6 +9,7 @@ user_id in ascending order.
 ## Requires
 * Python (version > 3)
 * Virtual environment (Create and activate virtual environment by using conda or virtualenv or any other library)
+* Follow this link to install conda : https://docs.conda.io/projects/conda/en/latest/user-guide/install/
 * Follow the below steps if you have conda installed.
 * To create the virtual environment:
 ```bash
